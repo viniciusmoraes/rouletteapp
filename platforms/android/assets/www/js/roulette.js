@@ -7,7 +7,7 @@
 	};
 
 	String.prototype.hashCode = function(){
-		// See http://www.cse.yorku.ca/~oz/hash.html		
+		// See http://www.cse.yorku.ca/~oz/hash.html
 		var hash = 5381;
 		for (i = 0; i < this.length; i++) {
 			char = this.charCodeAt(i);
@@ -20,13 +20,17 @@
 	Number.prototype.mod = function(n) {
 		return ((this%n)+n)%n;
 	}
-      
+
     venues = {
-		"116208"  : "1",
-		"66271"   : "2",
-		"5518"    : "3",
-		"392360"  : "4",
-		
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": "",
+		"6": "",
+		"7": "",
+		"8": ""
+
 	};
 
 	$(function() {
@@ -80,28 +84,28 @@
 		angleCurrent : 0,
 		angleDelta : 0,
 
-		size : 290,
+		size : 145,
 
 		canvasContext : null,
 
-		colors : [ '#ffff00', '#ffc700', '#ff9100', '#ff6301' ],
+		colors : [ '#ffff00', '#ff6600', '#0033cc', '#009933', '#ffff01', '#ff6601', '#0033cd', '#009934' ],
 
 		//segments : [ 'Andrew', 'Bob', 'Fred', 'John', 'China', 'Steve', 'Jim', 'Sally', 'Andrew', 'Bob', 'Fred', 'John', 'China', 'Steve', 'Jim'],
 		segments : [],
 
 		seg_colors : [], // Cache of segments to colors
-		
+
 		maxSpeed : Math.PI / 16,
 
 		upTime : 1000, // How long to spin up for (in ms)
-		downTime : 17000, // How long to slow down for (in ms)
+		downTime : 10000, // How long to slow down for (in ms)
 
 		spinStart : 0,
 
 		frames : 0,
 
-		centerX : 300,
-		centerY : 300,
+		centerX : 150,
+		centerY : 155,
 
 		spin : function() {
 
@@ -180,15 +184,16 @@
 		},
 
 		initCanvas : function() {
-			var canvas = $('#wheel #canvas').get(0);
+			var canvas = $('#wheel #canvas').get(0),
+					elementClick = $('#bg-roleta').get(0);
 
 			if ($.browser.msie) {
 				canvas = document.createElement('canvas');
-				$(canvas).attr('width', 320).attr('height', 568).attr('id', 'canvas').appendTo('.wheel');
+				$(canvas).attr('width', 320).attr('height', 320).attr('id', 'canvas').appendTo('.wheel');
 				canvas = G_vmlCanvasManager.initElement(canvas);
 			}
 
-			canvas.addEventListener("click", wheel.spin, false);
+			elementClick.addEventListener("click", wheel.spin, false);
 			wheel.canvasContext = canvas.getContext("2d");
 		},
 
@@ -227,7 +232,7 @@
 
 		clear : function() {
 			var ctx = wheel.canvasContext;
-			ctx.clearRect(0, 0, 1000, 800);
+			ctx.clearRect(0, 0, 320, 320);
 		},
 
 		drawNeedle : function() {
@@ -272,7 +277,7 @@
 			var colors = wheel.seg_color;
 
 			var value = segments[key];
-			
+
 			ctx.save();
 			ctx.beginPath();
 
@@ -331,7 +336,7 @@
 			}
 			// Draw a center circle
 			ctx.beginPath();
-			ctx.arc(centerX, centerY, 20, 0, PI2, false);
+			ctx.arc(centerX, centerY, 10, 0, PI2, false);
 			ctx.closePath();
 
 			ctx.fillStyle   = '#ffffff';
@@ -351,9 +356,9 @@
 	}
 
 	window.onload = function() {
-		
+
 	}
-    
+
     $(function(){
        wheel.init();
 
@@ -369,5 +374,5 @@
 		// Hide the address bar (for mobile devices)!
 		setTimeout(function() {
 			window.scrollTo(0, 1);
-		}, 0); 
+		}, 0);
     });
