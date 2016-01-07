@@ -29,7 +29,9 @@
 		"5": "",
 		"6": "",
 		"7": "",
-		"8": ""
+		"8": "",
+		"9": "",
+		"10": ""
 
 	};
 
@@ -88,7 +90,7 @@
 
 		canvasContext : null,
 
-		colors : [ '#ffff00', '#ff6600', '#0033cc', '#009933', '#ffff01', '#ff6601', '#0033cd', '#009934' ],
+		colors : [ '#ff6600', '#ffff00', '#ff6600', '#0033cc', '#ff6600', '#009933', '#ff6600', '#ffff00', '#ff6600', '#0033cc' ],
 
 		//segments : [ 'Andrew', 'Bob', 'Fred', 'John', 'China', 'Steve', 'Jim', 'Sally', 'Andrew', 'Bob', 'Fred', 'John', 'China', 'Steve', 'Jim'],
 		segments : [],

@@ -8,8 +8,9 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
+    <allow-navigation href="http://*/*" />
     <preference name="permissions" value="none" />
-    <preference name="orientation" value="portrait" />
+    <preference name="orientation" value="landscape" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
