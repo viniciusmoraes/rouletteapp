@@ -86,7 +86,7 @@
 		angleCurrent : 0,
 		angleDelta : 0,
 
-		size : 145,
+		size : 435,
 
 		canvasContext : null,
 
@@ -106,8 +106,8 @@
 
 		frames : 0,
 
-		centerX : 150,
-		centerY : 155,
+		centerX : 450,
+		centerY : 465,
 
 		spin : function() {
 
